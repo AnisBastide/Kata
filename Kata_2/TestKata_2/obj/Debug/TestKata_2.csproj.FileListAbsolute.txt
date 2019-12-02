@@ -1,0 +1,11 @@
+C:\Users\bastide\OneDrive - Pyramid\Bureau\GitKata\kata2\Kata_2\TestKata_2\obj\Debug\TestKata_2.csprojAssemblyReference.cache
+C:\Users\bastide\OneDrive - Pyramid\Bureau\GitKata\kata2\Kata_2\TestKata_2\bin\Debug\TestKata_2.dll
+C:\Users\bastide\OneDrive - Pyramid\Bureau\GitKata\kata2\Kata_2\TestKata_2\bin\Debug\TestKata_2.pdb
+C:\Users\bastide\OneDrive - Pyramid\Bureau\GitKata\kata2\Kata_2\TestKata_2\bin\Debug\Kata_2.dll
+C:\Users\bastide\OneDrive - Pyramid\Bureau\GitKata\kata2\Kata_2\TestKata_2\bin\Debug\nunit.framework.dll
+C:\Users\bastide\OneDrive - Pyramid\Bureau\GitKata\kata2\Kata_2\TestKata_2\bin\Debug\Kata_2.pdb
+C:\Users\bastide\OneDrive - Pyramid\Bureau\GitKata\kata2\Kata_2\TestKata_2\bin\Debug\nunit.framework.pdb
+C:\Users\bastide\OneDrive - Pyramid\Bureau\GitKata\kata2\Kata_2\TestKata_2\bin\Debug\nunit.framework.xml
+C:\Users\bastide\OneDrive - Pyramid\Bureau\GitKata\kata2\Kata_2\TestKata_2\obj\Debug\TestKata_2.csproj.CopyComplete
+C:\Users\bastide\OneDrive - Pyramid\Bureau\GitKata\kata2\Kata_2\TestKata_2\obj\Debug\TestKata_2.dll
+C:\Users\bastide\OneDrive - Pyramid\Bureau\GitKata\kata2\Kata_2\TestKata_2\obj\Debug\TestKata_2.pdb
