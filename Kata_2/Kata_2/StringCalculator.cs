@@ -37,7 +37,12 @@ namespace Kata_2
                     negativeNumbers+=intNumber + ";";
                     count++;
                 }
-                sum += intNumber;
+                if (intNumber <= 1000)
+                {
+                    sum += intNumber;
+                }
+                
+                
             }
 
             if (count > 0)

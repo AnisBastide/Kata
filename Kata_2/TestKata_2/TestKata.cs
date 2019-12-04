@@ -10,6 +10,7 @@ namespace TestKata_2
         [TestCase("",0)]
         [TestCase("1",1)]
         [TestCase("1,2",3)]
+        [TestCase("1,2,1001",3)]
         [TestCase("1\n2",3)]
         [TestCase("//;\n1;2",3)]
         public void VerifyAddOutput(string number,int expectedResult)
