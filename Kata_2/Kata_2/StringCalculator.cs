@@ -31,12 +31,12 @@ namespace Kata_2
         private static void AssertNumbersAreAllPositive(List<int> numbers)
         {
             var negativeNumbers = numbers.Where(intNumber => intNumber < 0).ToList();
-
-            if (negativeNumbers.Any())
-            {
-                var negativeNumbersString = string.Join(",", negativeNumbers);
-                throw new ArgumentException($"negatives not allowed, there is {negativeNumbers.Count} negative number:{negativeNumbersString}");
-            }
+            throw new NegativeNumberException(negativeNumbers);
+            //if (negativeNumbers.Any())
+            //{
+            //    var negativeNumbersString = string.Join(",", negativeNumbers);
+            //    throw new ArgumentException($"negatives not allowed, there is {negativeNumbers.Count} negative number:{negativeNumbersString}");
+            //}
         }
 
         private static List<int> GetNumbers(string number, string[] separators)
