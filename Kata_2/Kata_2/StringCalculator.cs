@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 
@@ -6,51 +7,53 @@ namespace Kata_2
 {
     public class StringCalculator
     {
-        public int Add(string number)
+        public int Add(string input)
         {
-            if (number == "")
+            if (input == "")
             {
                 return 0;
             }
 
-            return Sum(number);
+            var separators = GetSeparators(input);
+
+            var numbers = GetNumbers(input, separators);
+
+            AssertNumbersAreAllPositive(numbers);
+
+            return Add(numbers);
         }
 
-        public int Sum(string number)
+        private static int Add(List<int> numbers)
+        {
+            return numbers.Where(intNumber => intNumber <= 1000).Sum();
+        }
+
+        private static void AssertNumbersAreAllPositive(List<int> numbers)
+        {
+            var negativeNumbers = numbers.Where(intNumber => intNumber < 0).ToList();
+
+            if (negativeNumbers.Any())
+            {
+                var negativeNumbersString = string.Join(",", negativeNumbers);
+                throw new ArgumentException($"negatives not allowed, there is {negativeNumbers.Count} negative number:{negativeNumbersString}");
+            }
+        }
+
+        private static List<int> GetNumbers(string number, string[] separators)
+        {
+            var stringNumbers = number.Split(separators, StringSplitOptions.RemoveEmptyEntries).ToList();
+            return stringNumbers.Select(int.Parse).ToList();
+        }
+
+        private string[] GetSeparators(string number)
         {
             var customSeparator = "";
             if (number.StartsWith("/"))
             {
-                 customSeparator = CustomSeparator(number);
-            }
-            
-            String[] separator = {",","\n","/",customSeparator};
-            var stringNumbers = number.Split(separator, StringSplitOptions.RemoveEmptyEntries).ToList();
-            var numbers = stringNumbers.Select(int.Parse).ToList();
-            var sum = 0;
-            var count = 0;
-            var negativeNumbers = "";
-            foreach (int intNumber in numbers)
-            {
-                if (intNumber < 0)
-                {
-                    negativeNumbers+=intNumber + ";";
-                    count++;
-                }
-                if (intNumber <= 1000)
-                {
-                    sum += intNumber;
-                }
-                
-                
+                customSeparator = CustomSeparator(number);
             }
 
-            if (count > 0)
-            {
-                negativeNumbers=negativeNumbers.Remove((negativeNumbers.Length - 1));
-                throw new ArgumentException($"negatives not allowed, there is {count} negative number:{negativeNumbers}");
-            }
-            return sum;
+            return new[] { ",", "\n", "/", customSeparator };
         }
 
         public string CustomSeparator(string number)
