@@ -6,24 +6,25 @@ using NUnit.Framework.Internal;
 namespace TestKata_2
 {
     [TestFixture]
-    public class TestKata
+    public class StringCalculatorTest
     {
         [TestCase("",0)]
         [TestCase("1",1)]
         [TestCase("1,2",3)]
+        [TestCase("1,2,3,4",10)]
         [TestCase("1\n2",3)]
         [TestCase("//;\n1;2",3)]
-        public void VerifyAddOutput(string number,int expectedResult)
+        public void VerifyAddOutput(string numbers,int expectedResult)
         {
             //Arrange
             var stringCalculator = new StringCalculator();
             //Act
-            var actualResult = stringCalculator.Add(number);
+            var actualResult = stringCalculator.Add(numbers);
             //Assert
             Assert.AreEqual(expectedResult,actualResult);
         }
         [Test]
-        public void ThrowExceptionNegativeNumber()
+        public void ThrowExceptionWhenAddNegativeNumber()
         {
             //Arrange
             var number = "1,-2,-5" ;

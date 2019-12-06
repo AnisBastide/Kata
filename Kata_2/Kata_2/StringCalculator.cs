@@ -7,65 +7,76 @@ namespace Kata_2
 {
     public class StringCalculator
     {
-        public int Add(string number)
+        public int Add(string numbers)
         {
-            if (number == "")
+            if (numbers == "")
             {
                 return 0;
             }
 
-            return Sum(number);
+            return Sum(numbers);
         }
 
-        private int Sum(string number)
+        private int Sum(string numbers)
         {
-            var intNumbers = IntList(number);
+            var intNumbers = ConvertNumbersIntoIntegerList(numbers);
 
             return CheckNegativeNumbers(intNumbers);
+
         }
 
-        private static int CheckNegativeNumbers(List<int> intNumbers)
+
+
+        private List<int> ConvertNumbersIntoIntegerList(string numbers)
         {
-            var sum = 0;
-            var negativeNumbers = "";
-            foreach (int intNumber in intNumbers)
-            {
-                if (intNumber < 0)
-                {
-                    negativeNumbers = negativeNumbers + intNumber + ";";
-                }
-
-                sum += intNumber;
-            }
-
-            if (negativeNumbers != "")
-            {
-                throw new ArgumentException($"no negatives allowed {negativeNumbers}");
-            }
-
-            return sum;
-        }
-
-        private List<int> IntList(string number)
-        {
-            string[] separator = { ",", "\n", "/", CustomSeparator(number) };
-            var stringNumbers = number.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+            string[] separator = { ",", "\n", "/", GetCustomSeparator(numbers) };
+            var stringNumbers = numbers.Split(separator, StringSplitOptions.RemoveEmptyEntries);
             var intNumbers = stringNumbers.Select(int.Parse).ToList();
             return intNumbers;
         }
-
-        private string CustomSeparator(string number)
+        private string GetCustomSeparator(string numbers)
         {
             var customSeparator = "";
             String[] separator = { ",", "\n", "/" };
-            if (number.StartsWith("//"))
+            if (numbers.StartsWith("//"))
             {
-                var stringNumber = number.Split(separator, StringSplitOptions.RemoveEmptyEntries).ToList();
+                var stringNumber = numbers.Split(separator, StringSplitOptions.RemoveEmptyEntries).ToList();
                 customSeparator = stringNumber[0];
             }
 
             return customSeparator;
         }
 
+        private static int CheckNegativeNumbers(List<int> intNumbers)
+        {
+            
+            var negativeNumbers = "";
+            foreach (int intNumber in intNumbers)
+            {
+                if (intNumber < 0)
+                {
+                    negativeNumbers+=  intNumber + ";";
+                }
+
+                
+            }
+
+            if (negativeNumbers != "")
+            {
+                throw new ArgumentException($"no negatives allowed {negativeNumbers}");
+            }
+            return Sum(intNumbers);
+
+        }
+        private static int Sum(List<int> intNumbers)
+        {
+            var sum = 0;
+            foreach (int intNumber in intNumbers)
+            {
+                sum += intNumber;
+            }
+
+            return sum;
+        }
     }
 }
