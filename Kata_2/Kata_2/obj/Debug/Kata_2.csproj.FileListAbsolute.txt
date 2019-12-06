@@ -1,0 +1,5 @@
+C:\Users\bastide\OneDrive - Pyramid\Bureau\GitKata\kata2\Kata_2\Kata_2\bin\Debug\Kata_2.dll
+C:\Users\bastide\OneDrive - Pyramid\Bureau\GitKata\kata2\Kata_2\Kata_2\bin\Debug\Kata_2.pdb
+C:\Users\bastide\OneDrive - Pyramid\Bureau\GitKata\kata2\Kata_2\Kata_2\obj\Debug\Kata_2.csprojAssemblyReference.cache
+C:\Users\bastide\OneDrive - Pyramid\Bureau\GitKata\kata2\Kata_2\Kata_2\obj\Debug\Kata_2.dll
+C:\Users\bastide\OneDrive - Pyramid\Bureau\GitKata\kata2\Kata_2\Kata_2\obj\Debug\Kata_2.pdb
