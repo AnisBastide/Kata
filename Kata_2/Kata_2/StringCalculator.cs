@@ -14,18 +14,14 @@ namespace Kata_2
                 return 0;
             }
 
-            var sum = Sum(number);
-
-            return sum;
+            return Sum(number);
         }
 
         private int Sum(string number)
         {
             var intNumbers = IntList(number);
-            var sum = CheckNegativeNumbers(intNumbers);
 
-
-            return sum;
+            return CheckNegativeNumbers(intNumbers);
         }
 
         private static int CheckNegativeNumbers(List<int> intNumbers)
@@ -52,7 +48,7 @@ namespace Kata_2
 
         private List<int> IntList(string number)
         {
-            string[] separator = {",", "\n", "/", CustomSeparator(number)};
+            string[] separator = { ",", "\n", "/", CustomSeparator(number) };
             var stringNumbers = number.Split(separator, StringSplitOptions.RemoveEmptyEntries);
             var intNumbers = stringNumbers.Select(int.Parse).ToList();
             return intNumbers;
